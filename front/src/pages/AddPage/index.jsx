@@ -15,6 +15,10 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Footer from '../../components/Footer';
 import {getAll, postData, deleteData} from '../../api/httprequests'
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 import * as Yup from 'yup';
  
@@ -30,10 +34,16 @@ import * as Yup from 'yup';
 
 const AddPage = () => {
   const [products,setProducts] = useState([])
+
+  const [searchedProduct, setSearchedProduct] = useState()
+
+  const [price, setPrice] =  useState()
+
    const fetchdata=async ()=>{
     const allProducts = await getAll()
     console.log("allProducts", allProducts)
     setProducts(allProducts)
+    setSearchedProduct(allProducts)
   }
   useEffect(() => {
    
@@ -68,6 +78,23 @@ const AddPage = () => {
     setProducts(updatedData)
   }
 
+  const handleSearch = (e) => {
+    const findedProducts =  products.filter(x => x.name.trim().toLowerCase().includes(e.target.value.trim().toLowerCase()))
+    console.log(findedProducts)
+
+    if(e.target.value == ''){
+      setSearchedProduct(products)
+    }
+    else{
+      setSearchedProduct(findedProducts)
+    }
+
+  }
+
+
+  const handleSort = (e) => {
+    
+  }
 
   return (
     <>
@@ -87,6 +114,11 @@ const AddPage = () => {
           <Button type='submit' variant='contained'>post</Button>
         </form>
 
+        <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>     
+          <TextField onChange={(e)=> handleSearch(e)} style={{margin:'50px 0', width:'60%'}} id="standard-basic" label="Search Product" variant="standard" />       
+        </div>
+
+
         <div className='table'>
         <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -99,7 +131,7 @@ const AddPage = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {products && products.map((row) => (
+            {searchedProduct && searchedProduct.map((row) => (
               <TableRow
                 key={row._id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
