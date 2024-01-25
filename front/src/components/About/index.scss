@@ -20,8 +20,22 @@
             color: #ADB5BD;
         }
         img{
-            max-width: 750px;
-            max-height: 640px;
+            width: 750px;
+            height: 640px;
         }
     }
+
+
 }
+
+@media only screen and (max-width: 600px) {
+    .about{
+        .wrapper{
+
+            img {
+                width: 300px!important;
+                height: 300px!important;
+            }
+        }
+    }
+  }
