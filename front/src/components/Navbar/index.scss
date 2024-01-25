@@ -1,0 +1,42 @@
+$color: rgb(241,104,33);
+@mixin space-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    .topNavWrapper{
+        padding: 15px 0;
+        max-width: 1130px;
+        margin: 0 auto;
+        background-color: white;
+        @include space-between;
+        .social{
+            @include center;
+            gap: 20px;
+            li{
+                @include center;
+                background-color: black;
+                border-radius: 50%;
+                color: white;
+                padding: 5px;
+            }
+        }
+        .contact{
+            @include center;
+            ul{
+                @include center;
+                gap: 20px;
+                li{
+                    @include center;
+                }
+            }
+        }
+    }
+}
