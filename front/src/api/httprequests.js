@@ -2,16 +2,15 @@ import axios from 'axios'
 
 export async function getAll(){
     let products
-    axios.get('http://localhost:8080/api/products').then((res)=>{
+   const res =  await axios.get('http://localhost:8080/api/products')
         products = res.data
-        console.log("res.data", res.data)
-    })
+        console.log("res.dat", products)
     return products
 }
 
 export async function getOne(id){
     let product
-    axios.get(`http://localhost:8080/api/products/${id}`).then((res)=>{
+    await axios.get(`http://localhost:8080/api/products/${id}`).then((res)=>{
         product = res.data
     })
     return product
@@ -20,15 +19,15 @@ export async function getOne(id){
 export async function postData(payload){
     console.log("payload", payload)
     let newProduct
-    axios.post('http://localhost:8080/api/products', payload).then((res)=>{
+    await axios.post('http://localhost:8080/api/products', payload).then((res)=>{
         newProduct = res.data
     })
     return newProduct
 }
 
-export async function deletedata(id){
+export async function deleteData(id){
     let product
-    axios.delete(`http://localhost:8080/api/products/${id}`).then((res)=>{
+    await axios.delete(`http://localhost:8080/api/products/${id}`).then((res)=>{
         product = res.data
     })
     return product
