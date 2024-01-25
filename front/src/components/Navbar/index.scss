@@ -39,4 +39,35 @@ header{
             }
         }
     }
+    nav{
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background-color: white;
+        padding: 20px;
+
+        .wrapper{
+            max-width: 1130px;
+            margin: 0 auto;
+            @include space-between;
+            .logo{
+                @include center;
+                gap: 20px;
+                font-size: 40px;
+                span{
+                    color: $color;
+                }
+            }
+            ul{
+                @include center;
+                gap: 40px;
+                font-size: 20px;
+                li{
+                    a{
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
 }

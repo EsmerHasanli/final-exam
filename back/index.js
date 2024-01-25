@@ -13,7 +13,7 @@ const ProductSchema =  mongoose.Schema({
     name: String,
     price: String,
     image: String,
-    description: String
+    description: String,
 })
 
 
