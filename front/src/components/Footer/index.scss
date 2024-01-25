@@ -1,0 +1,54 @@
+footer {
+    padding: 30px 0;
+
+    .wrapper {
+        max-width: 1130px;
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+
+        flex-wrap: wrap;
+
+        h4 {
+            font-size: 16px;
+            font-weight:
+                900;
+            margin-bottom: 15px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .follow {
+            ul {
+                display: flex;
+                gap: 10px;
+            }
+        }
+
+        .product{
+            img{
+                width:260px ;
+                height: 250px ;
+            }
+            h6{
+                font-size: 20px;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+            p{
+                margin-bottom: 10px;
+            }
+            button{
+                padding: 10px 20px;
+                background-color: black;
+                color: white;
+            }
+        }
+    }
+}

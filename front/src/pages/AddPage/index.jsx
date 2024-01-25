@@ -13,9 +13,20 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
+import Footer from '../../components/Footer';
 import {getAll, postData, deleteData} from '../../api/httprequests'
 
+import * as Yup from 'yup';
+ 
+ const PostSchema = Yup.object().shape({
+   name: Yup.string()
+     .min(2, 'Too Short!')
+     .max(50, 'Too Long!')
+     .required('Required'),
+   price: Yup.string().required('Required'),
+   image: Yup.string().required().url(),
+   description: Yup.string().required()
+ });
 
 const AddPage = () => {
   const [products,setProducts] = useState([])
@@ -41,6 +52,7 @@ const AddPage = () => {
       description: '',
       rating: '5',
     },
+    validationSchema:PostSchema,
     onSubmit: async (values, actions) => {
       console.log(values)
       alert('data posted')
@@ -104,6 +116,7 @@ const AddPage = () => {
         </Table>
       </TableContainer>
         </div>
+        <Footer/>
       </section>
     </>
   )

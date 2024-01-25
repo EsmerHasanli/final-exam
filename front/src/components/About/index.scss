@@ -1,0 +1,27 @@
+.about{
+    padding: 100px 0;
+    .wrapper{
+        max-width: 1130px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items:  center ; 
+        gap: 100px;
+        flex-wrap: wrap;
+        h2{
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        h4{
+            font-size:18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ADB5BD;
+        }
+        img{
+            max-width: 750px;
+            max-height: 640px;
+        }
+    }
+}

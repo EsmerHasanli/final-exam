@@ -8,6 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { BasketItemContext } from '../../context/BasketItemContext';
 import Button from '@mui/material/Button';
+import Footer from '../../components/Footer';
 
 const Basket = () => {
   const {basketItem, removeItem} =  useContext(BasketItemContext)
@@ -42,6 +43,7 @@ const Basket = () => {
     </Table>
   </TableContainer>
     </div>
+    <Footer/>
     </>
   )
 }

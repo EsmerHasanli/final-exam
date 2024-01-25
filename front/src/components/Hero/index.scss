@@ -1,0 +1,47 @@
+.hero {
+    background-image: url(https://preview.colorlib.com/theme/selling/images/hero_2.jpg);
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding: 250px;
+    h1{
+        font-size:80px;
+        font-weight: 900;
+        color: white;
+    }
+    p{
+        color: white;
+        margin-bottom: 30px;
+    }
+    div{
+        display: flex;
+        gap: 10px;
+        .shop{
+            padding: 15px 35px;
+            color: white;
+            border: 1px solid white;
+            background-color: transparent;
+            font-size: 12px;
+            font-weight: 900;
+            &:hover{
+                color: black;
+                border: 1px solid white;
+                background-color: white;
+            }
+        }
+        .membership{
+            color: black;
+            border: 1px solid white;
+            background-color: white;
+            font-size: 12px;
+            font-weight: 900;
+            padding: 15px 35px;
+            &:hover{
+                color: white;
+                border: 1px solid white;
+                background-color: transparent;
+            }
+        }
+    }
+}
